@@ -1101,7 +1101,7 @@
                 <a href="https://www.instagram.com/vksingh_sooryavanshi" target="_blank" rel="noopener noreferrer" class="social-chip"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
 
-            <p class="copyright">&copy; 2026 Vishal Kumar Singh. All rights reserved.</p>
+            <p class="copyright">&copy; <span id="current-year"></span> Vishal Kumar Singh. All rights reserved.</p>
 
             <!-- Preserved Gutter Ad Banner -->
             <div class="ad-placement">
@@ -1112,9 +1112,17 @@
         </div>
     </footer>
 
-    <!-- Lightweight Native Scroll-Reveal Script -->
+    <!-- Lightweight Native Scroll-Reveal Script & Dynamic Year -->
     <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
         document.addEventListener("DOMContentLoaded", () => {
+            // Dynamic Copyright Year
+            const yearEl = document.getElementById("current-year");
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // Scroll Reveal Observer
             const nodes = document.querySelectorAll(".reveal-node");
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -1127,6 +1135,7 @@
 
             nodes.forEach(node => observer.observe(node));
         });
+    </script>
     </script>
 </body>
 </html>
