@@ -29,13 +29,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- ==========================================================================
-         CONSOLIDATED STYLESHEET WITH MODERN ANIMATIONS & GLASSMORPHISM
+         CONSOLIDATED RESPONSIVE STYLESHEET WITH GLASSMORPHISM
          ========================================================================== -->
     <style>
         :root {
             --bg-page: #080c14;
             --bg-surface: rgba(17, 24, 39, 0.7);
-            --bg-card: rgba(22, 32, 50, 0.6);
+            --bg-card: rgba(22, 32, 50, 0.65);
             --border-subtle: rgba(255, 255, 255, 0.08);
             --border-hover: rgba(56, 189, 248, 0.4);
             --primary: #38bdf8;
@@ -63,18 +63,19 @@
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             position: relative;
+            width: 100%;
         }
 
-        /* Ambient Animated Mesh Gradient */
+        /* Ambient Glow Backdrop */
         .ambient-glow {
             position: fixed;
-            top: -200px;
+            top: -150px;
             left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(2, 132, 199, 0.04) 50%, transparent 70%);
-            filter: blur(80px);
+            width: min(850px, 100vw);
+            height: 550px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(2, 132, 199, 0.03) 50%, transparent 70%);
+            filter: blur(90px);
             z-index: -1;
             pointer-events: none;
             animation: pulseGlow 10s ease-in-out infinite alternate;
@@ -82,7 +83,7 @@
 
         @keyframes pulseGlow {
             0% { transform: translateX(-50%) scale(1); opacity: 0.7; }
-            100% { transform: translateX(-48%) scale(1.15); opacity: 1; }
+            100% { transform: translateX(-48%) scale(1.1); opacity: 1; }
         }
 
         /* Top Navigation */
@@ -90,17 +91,18 @@
             position: sticky;
             top: 0;
             z-index: 999;
-            background: rgba(8, 12, 20, 0.8);
+            background: rgba(8, 12, 20, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 1rem 0;
+            padding: 0.85rem 0;
+            width: 100%;
         }
 
         .nav-container {
             max-width: 1140px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -112,7 +114,6 @@
             color: var(--text-primary);
             text-decoration: none;
             letter-spacing: -0.5px;
-            transition: var(--transition);
         }
 
         .brand-logo span {
@@ -129,13 +130,13 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 1.75rem;
+            gap: 1.5rem;
         }
 
         .nav-link {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.925rem;
+            font-size: 0.92rem;
             font-weight: 500;
             position: relative;
             transition: var(--transition);
@@ -164,7 +165,7 @@
         .nav-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.45rem;
             background: rgba(56, 189, 248, 0.08);
             color: var(--primary);
             border: 1px solid var(--primary);
@@ -183,28 +184,29 @@
             transform: translateY(-2px);
         }
 
-        /* Container */
+        /* Container Layout */
         .page-container {
             max-width: 1140px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
+            width: 100%;
         }
 
         /* Hero Section */
         .hero-section {
-            padding: 5rem 0 3.5rem;
+            padding: 4rem 0 2.5rem;
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 850px) {
             .hero-grid {
-                grid-template-columns: 1.4fr 1fr;
+                grid-template-columns: 1.35fr 1fr;
             }
         }
 
@@ -238,10 +240,10 @@
         }
 
         .hero-title {
-            font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+            font-size: clamp(2.1rem, 4.2vw, 3.25rem);
             font-weight: 800;
             letter-spacing: -1px;
-            line-height: 1.15;
+            line-height: 1.18;
             margin-bottom: 0.85rem;
             background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
             -webkit-background-clip: text;
@@ -249,9 +251,9 @@
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.15rem;
         }
 
         .hero-subtitle .highlight {
@@ -261,7 +263,7 @@
 
         .hero-bio {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.98rem;
             line-height: 1.75;
             margin-bottom: 2rem;
         }
@@ -269,16 +271,17 @@
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.85rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
+            padding: 0.75rem 1.4rem;
             border-radius: 10px;
-            font-size: 0.95rem;
+            font-size: 0.925rem;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
@@ -294,7 +297,7 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             border-color: var(--primary-dark);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(2, 132, 199, 0.4);
         }
 
@@ -308,21 +311,22 @@
         .btn-secondary:hover {
             border-color: var(--primary);
             color: var(--primary);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-visual {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .image-wrapper {
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: clamp(200px, 25vw, 240px);
+            height: clamp(200px, 25vw, 240px);
             border-radius: 28px;
-            padding: 6px;
+            padding: 5px;
             background: linear-gradient(135deg, var(--primary), rgba(56, 189, 248, 0.1) 60%);
             box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.2);
             animation: floatImage 6s ease-in-out infinite alternate;
@@ -330,7 +334,7 @@
 
         @keyframes floatImage {
             0% { transform: translateY(0px); }
-            100% { transform: translateY(-10px); }
+            100% { transform: translateY(-8px); }
         }
 
         .profile-image {
@@ -339,26 +343,21 @@
             border-radius: 24px;
             object-fit: cover;
             background: var(--bg-card);
+            display: block;
         }
 
-        /* Metrics Grid */
+        /* Metrics Bar */
         .metrics-grid {
-            margin-top: 3.5rem;
+            margin-top: 3rem;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-        }
-
-        @media (min-width: 768px) {
-            .metrics-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
         .metric-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            padding: 1.5rem;
+            padding: 1.35rem 1.5rem;
             border-radius: 14px;
             display: flex;
             flex-direction: column;
@@ -368,12 +367,12 @@
 
         .metric-card:hover {
             border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.4);
         }
 
         .metric-number {
-            font-size: 1.85rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: var(--primary);
             letter-spacing: -0.5px;
@@ -386,24 +385,25 @@
             margin-top: 0.25rem;
         }
 
-        /* Section Layout */
+        /* Section Layouts */
         .section-block {
-            padding: 4.5rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border-subtle);
+            width: 100%;
         }
 
         .section-title-wrap {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.25rem;
         }
 
         .section-title {
-            font-size: 1.95rem;
+            font-size: clamp(1.65rem, 3vw, 2rem);
             font-weight: 700;
             letter-spacing: -0.5px;
         }
 
         .section-caption {
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             color: var(--text-muted);
             margin-top: 0.35rem;
         }
@@ -412,13 +412,13 @@
         .timeline-container {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.35rem;
         }
 
         .timeline-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            padding: 2rem;
+            padding: 1.75rem;
             border-radius: 16px;
             backdrop-filter: blur(12px);
             transition: var(--transition);
@@ -426,7 +426,7 @@
 
         .timeline-card:hover {
             border-color: var(--border-hover);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4);
         }
 
@@ -434,6 +434,7 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 1rem;
+            gap: 0.5rem;
         }
 
         @media (min-width: 640px) {
@@ -441,16 +442,17 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
+                gap: 1rem;
             }
         }
 
         .role-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
         .company-name {
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             font-weight: 500;
             color: var(--primary);
             margin-top: 0.2rem;
@@ -458,27 +460,27 @@
 
         .role-tenure {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.03);
-            padding: 0.3rem 0.75rem;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.28rem 0.65rem;
             border-radius: 6px;
             border: 1px solid var(--border-subtle);
             width: fit-content;
-            margin-top: 0.4rem;
+            white-space: nowrap;
         }
 
         .role-achievements {
             list-style-type: none;
             display: flex;
             flex-direction: column;
-            gap: 0.65rem;
+            gap: 0.55rem;
         }
 
         .role-achievements li {
             position: relative;
             padding-left: 1.35rem;
-            font-size: 0.94rem;
+            font-size: 0.925rem;
             color: var(--text-secondary);
         }
 
@@ -490,11 +492,11 @@
             font-weight: bold;
         }
 
-        /* Projects Grid */
+        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.5rem;
         }
 
         .project-card {
@@ -510,13 +512,13 @@
 
         .project-card:hover {
             border-color: var(--primary);
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             box-shadow: 0 16px 36px -12px rgba(56, 189, 248, 0.15);
         }
 
         .project-thumbnail {
             width: 100%;
-            height: 190px;
+            height: 180px;
             background: var(--bg-card);
             overflow: hidden;
             position: relative;
@@ -527,53 +529,54 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            display: block;
         }
 
         .project-card:hover .project-thumbnail img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
 
         .project-content {
-            padding: 1.75rem;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .project-name {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
         }
 
         .project-description {
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            line-height: 1.65;
-            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
             flex-grow: 1;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            gap: 0.45rem;
+            margin-bottom: 1.25rem;
         }
 
         .tech-tag {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-subtle);
             color: var(--text-secondary);
-            padding: 0.25rem 0.65rem;
+            padding: 0.22rem 0.55rem;
             border-radius: 6px;
         }
 
         .project-footer {
             border-top: 1px solid var(--border-subtle);
-            padding-top: 1.25rem;
+            padding-top: 1.1rem;
         }
 
         .project-link {
@@ -583,83 +586,109 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             transition: var(--transition);
         }
 
         .project-link:hover {
-            gap: 0.75rem;
+            gap: 0.65rem;
         }
 
-        /* Skill Pills */
+        /* ==========================================================================
+           TECHNICAL EXPERTISE (FIXED ICON ALIGNMENT & SPACING)
+           ========================================================================== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
         .skill-group {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 1.75rem;
+            padding: 1.5rem;
             backdrop-filter: blur(12px);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .skill-group:hover {
             border-color: var(--border-hover);
             transform: translateY(-3px);
+            box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.4);
         }
 
+        /* Flexbox container preventing text and icon collision */
         .skill-group-head {
             display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1.25rem;
         }
 
-        .skill-icon {
+        /* Styled icon badge ensuring fixed dimensions */
+        .skill-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
             color: var(--primary);
-            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .skill-icon-wrap i {
+            font-size: 1.05rem;
         }
 
         .skill-group-head h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
         }
 
         .pill-cloud {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.55rem;
+            gap: 0.5rem;
         }
 
         .pill-cloud span {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-subtle);
-            padding: 0.4rem 0.85rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             color: var(--text-secondary);
             font-weight: 500;
             transition: var(--transition);
+            display: inline-block;
         }
 
         .pill-cloud span:hover {
             color: var(--primary);
             border-color: var(--border-hover);
-            background: rgba(56, 189, 248, 0.06);
+            background: rgba(56, 189, 248, 0.08);
+            transform: translateY(-1px);
         }
 
-        /* Credentials */
+        /* Credentials Section */
         .credentials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
         .credential-box {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            padding: 1.75rem;
+            padding: 1.6rem;
             border-radius: 16px;
             backdrop-filter: blur(12px);
             transition: var(--transition);
@@ -667,32 +696,32 @@
 
         .credential-box:hover {
             border-color: var(--border-hover);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .cred-badge {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.725rem;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
             letter-spacing: 0.6px;
         }
 
         .credential-box h4 {
-            font-size: 1.15rem;
+            font-size: 1.125rem;
             font-weight: 700;
         }
 
         .cred-inst {
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
             margin: 0.25rem 0;
         }
 
         .cred-detail {
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             color: var(--text-muted);
         }
 
@@ -700,18 +729,19 @@
         .footer {
             background: var(--bg-surface);
             border-top: 1px solid var(--border-subtle);
-            padding: 5rem 0 3rem;
+            padding: 4.5rem 0 2.5rem;
             text-align: center;
+            width: 100%;
         }
 
         .footer-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
         }
 
         .footer-title {
-            font-size: 2rem;
+            font-size: clamp(1.6rem, 3vw, 2rem);
             font-weight: 800;
             margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
@@ -719,29 +749,29 @@
 
         .footer-subtitle {
             color: var(--text-secondary);
-            font-size: 0.98rem;
-            margin-bottom: 2.25rem;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
         }
 
         .footer-socials {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2.5rem;
+            gap: 0.65rem;
+            margin-bottom: 2.25rem;
         }
 
         .social-chip {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
             color: var(--text-secondary);
             text-decoration: none;
-            padding: 0.6rem 1.25rem;
+            padding: 0.55rem 1.15rem;
             border-radius: 10px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 500;
             transition: var(--transition);
         }
@@ -755,11 +785,11 @@
 
         .copyright {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.84rem;
         }
 
         .ad-placement {
-            margin-top: 2.25rem;
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
         }
@@ -770,11 +800,11 @@
             border-radius: 8px;
         }
 
-        /* Scroll Reveal Animation Classes */
+        /* Scroll Reveal Animation Node */
         .reveal-node {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(20px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-node.is-revealed {
@@ -782,12 +812,55 @@
             transform: translateY(0);
         }
 
-        @media (max-width: 767px) {
-            .nav-menu { display: none; }
-            .hero-section { padding: 3.5rem 0 2rem; }
-            .hero-title { font-size: 2.2rem; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .metrics-grid { grid-template-columns: 1fr 1fr; }
+        /* Comprehensive Responsive Rules */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-section {
+                padding: 3rem 0 2rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-socials {
+                flex-direction: column;
+            }
+
+            .social-chip {
+                justify-content: center;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -822,9 +895,9 @@
                         Engineering Enterprise AI &amp; Scalable Systems
                     </div>
                     <h1 class="hero-title">Vishal Kumar Singh</h1>
-                    <p class="hero-subtitle">Software Developer at <span class="highlight">India Today Group</span> </p>
+                    <p class="hero-subtitle">Software Developer at <span class="highlight">India Today Group</span></p>
                     <p class="hero-bio">
-                        Over 3 years of production engineering experience specializing in multi-modal AI agents, workflow automation, and distributed cloud backends . Proven expertise leveraging Python, C# (.NET), React, and Google Cloud Platform to streamline mission-critical broadcast and digital workflows .
+                        Over 3 years of production engineering experience specializing in multi-modal AI agents, workflow automation, and distributed cloud backends. Proven expertise leveraging Python, C# (.NET), React, and Google Cloud Platform to streamline mission-critical broadcast and digital workflows.
                     </p>
                     <div class="hero-actions">
                         <a href="mailto:gvishal.kumar.singh@gmail.com" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Get in Touch</a>
@@ -835,12 +908,12 @@
 
                 <div class="hero-visual">
                     <div class="image-wrapper">
-                        <img src="img/vishal.jpg" alt="Vishal Kumar Singh" class="profile-image" width="250" height="250">
+                        <img src="img/vishal.jpg" alt="Vishal Kumar Singh" class="profile-image" width="240" height="240">
                     </div>
                 </div>
             </div>
 
-            <!-- Quantitative Engineering Impact Metrics -->
+            <!-- Impact Metrics -->
             <div class="metrics-grid">
                 <div class="metric-card reveal-node">
                     <span class="metric-number">3+</span>
@@ -848,15 +921,15 @@
                 </div>
                 <div class="metric-card reveal-node">
                     <span class="metric-number">20%</span>
-                    <span class="metric-label">Operational Speedup via Tools </span>
+                    <span class="metric-label">Operational Speedup via Tools</span>
                 </div>
                 <div class="metric-card reveal-node">
                     <span class="metric-number">10%</span>
-                    <span class="metric-label">Asset Query Latency Reduced </span>
+                    <span class="metric-label">Asset Query Latency Reduced</span>
                 </div>
                 <div class="metric-card reveal-node">
                     <span class="metric-number">IEEE</span>
-                    <span class="metric-label">Former Student Branch Chairman </span>
+                    <span class="metric-label">Former Student Branch Chairman</span>
                 </div>
             </div>
         </section>
@@ -874,13 +947,13 @@
                     <div class="role-header">
                         <div>
                             <h3 class="role-title">Software Developer</h3>
-                            <h4 class="company-name">TV Today Network Limited (India Today Group) </h4>
+                            <h4 class="company-name">TV Today Network Limited (India Today Group)</h4>
                         </div>
-                        <span class="role-tenure">Apr 2025 – Present</span> 
+                        <span class="role-tenure">Apr 2025 – Present</span>
                     </div>
                     <ul class="role-achievements">
-                        <li>Architected multimodal AI agents integrating Google Gemini and OpenAI to interpret databases and execute data workflows autonomously from user prompts .</li>
-                        <li>Built an AI agent pipeline to automatically upscale and enhance graphic quality for broadcast stories going On-AIR .</li>
+                        <li>Architected multimodal AI agents integrating Google Gemini and OpenAI to interpret databases and execute data workflows autonomously from user prompts.</li>
+                        <li>Built an AI agent pipeline to automatically upscale and enhance graphic quality for broadcast stories going On-AIR.</li>
                     </ul>
                 </div>
 
@@ -889,16 +962,16 @@
                     <div class="role-header">
                         <div>
                             <h3 class="role-title">Junior Software Programmer</h3>
-                            <h4 class="company-name">TV Today Network Limited (India Today Group) </h4>
+                            <h4 class="company-name">TV Today Network Limited (India Today Group)</h4>
                         </div>
-                        <span class="role-tenure">Jun 2022 – Mar 2025</span> 
+                        <span class="role-tenure">Jun 2022 – Mar 2025</span>
                     </div>
                     <ul class="role-achievements">
-                        <li>Engineered an AI-powered English-to-Hindi translation application, cutting manual workload and boosting publishing turnaround time .</li>
-                        <li>Designed dynamic web interfaces and data management workflows for live national election coverage .</li>
-                        <li>Automated token calculations, XML conversions, and audio transcriptions, lifting operational throughput by 20% .</li>
-                        <li>Designed and developed an internal task checklist web application with calendar visualization and task deadline notifications .</li>
-                        <li>Optimized enterprise asset data storage, cutting retrieval latency by 10% across developer workflows .</li>
+                        <li>Engineered an AI-powered English-to-Hindi translation application, cutting manual workload and boosting publishing turnaround time.</li>
+                        <li>Designed dynamic web interfaces and data management workflows for live national election coverage.</li>
+                        <li>Automated token calculations, XML conversions, and audio transcriptions, lifting operational throughput by 20%.</li>
+                        <li>Designed and developed an internal task checklist web application with calendar visualization and task deadline notifications.</li>
+                        <li>Optimized enterprise asset data storage, cutting retrieval latency by 10% across developer workflows.</li>
                     </ul>
                 </div>
 
@@ -907,13 +980,13 @@
                     <div class="role-header">
                         <div>
                             <h3 class="role-title">Broadcast Engineer</h3>
-                            <h4 class="company-name">TV Today Network Limited </h4>
+                            <h4 class="company-name">TV Today Network Limited</h4>
                         </div>
-                        <span class="role-tenure">Dec 2022 – Jun 2023</span> 
+                        <span class="role-tenure">Dec 2022 – Jun 2023</span>
                     </div>
                     <ul class="role-achievements">
-                        <li>Operated enterprise broadcast hardware, LiveU field transmitters, and digital video editing servers under strict live transmission constraints .</li>
-                        <li>Diagnosed and resolved critical technical faults under tight live news broadcast deadlines .</li>
+                        <li>Operated enterprise broadcast hardware, LiveU field transmitters, and digital video editing servers under strict live transmission constraints.</li>
+                        <li>Diagnosed and resolved critical technical faults under tight live news broadcast deadlines.</li>
                     </ul>
                 </div>
             </div>
@@ -930,7 +1003,7 @@
                 <!-- Project 1: Student DBMS -->
                 <div class="project-card reveal-node">
                     <div class="project-thumbnail">
-                        <img src="img/sdbms.jpg" alt="Student Database Management System" loading="lazy" width="360" height="190">
+                        <img src="img/sdbms.jpg" alt="Student Database Management System" loading="lazy" width="360" height="180">
                     </div>
                     <div class="project-content">
                         <h3 class="project-name">Student DBMS Platform</h3>
@@ -953,12 +1026,12 @@
                 <!-- Project 2: MAESM -->
                 <div class="project-card reveal-node">
                     <div class="project-thumbnail">
-                        <img src="img/MAESM.jpg" alt="MAESM-2021 Conference Portal" loading="lazy" width="360" height="190">
+                        <img src="img/MAESM.jpg" alt="MAESM-2021 Conference Portal" loading="lazy" width="360" height="180">
                     </div>
                     <div class="project-content">
                         <h3 class="project-name">MAESM Conference Portal</h3>
                         <p class="project-description">
-                            Institutional portal built for the International Conference on Modern Approaches in Engineering, Science, and Management, integrated directly with EasyChair for paper submissions .
+                            Institutional portal built for the International Conference on Modern Approaches in Engineering, Science, and Management, integrated directly with EasyChair for paper submissions.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">HTML5</span>
@@ -976,7 +1049,7 @@
                 <!-- Project 3: Portfolio -->
                 <div class="project-card reveal-node">
                     <div class="project-thumbnail">
-                        <img src="img/portfolio.jpg" alt="Personal Developer Portfolio" loading="lazy" width="360" height="190">
+                        <img src="img/portfolio.jpg" alt="Personal Developer Portfolio" loading="lazy" width="360" height="180">
                     </div>
                     <div class="project-content">
                         <h3 class="project-name">Personal Portfolio</h3>
@@ -998,7 +1071,9 @@
             </div>
         </section>
 
-        <!-- Technical Skills Section -->
+        <!-- ==========================================================================
+             TECHNICAL EXPERTISE (SEPARATED ICONS & TEXT)
+             ========================================================================== -->
         <section class="section-block" id="skills">
             <div class="section-title-wrap reveal-node">
                 <h2 class="section-title">Technical Expertise</h2>
@@ -1006,59 +1081,71 @@
             </div>
 
             <div class="skills-grid">
+                <!-- Group 1: Languages -->
                 <div class="skill-group reveal-node">
                     <div class="skill-group-head">
-                        <i class="fa fa-code skill-icon"></i>
+                        <div class="skill-icon-wrap">
+                            <i class="fa fa-code"></i>
+                        </div>
                         <h3>Languages</h3>
                     </div>
                     <div class="pill-cloud">
-                        <span>Python</span> 
-                        <span>C#</span> 
-                        <span>JavaScript (ES6+)</span> 
-                        <span>SQL</span> 
-                        <span>HTML5 / CSS3</span> 
+                        <span>Python</span>
+                        <span>C#</span>
+                        <span>JavaScript (ES6+)</span>
+                        <span>SQL</span>
+                        <span>HTML5 / CSS3</span>
                     </div>
                 </div>
 
+                <!-- Group 2: Frameworks -->
                 <div class="skill-group reveal-node">
                     <div class="skill-group-head">
-                        <i class="fa fa-layer-group skill-icon"></i>
+                        <div class="skill-icon-wrap">
+                            <i class="fa fa-layer-group"></i>
+                        </div>
                         <h3>Frameworks &amp; Libs</h3>
                     </div>
                     <div class="pill-cloud">
-                        <span>.NET / ASP.NET MVC</span> 
-                        <span>React.js</span> 
-                        <span>Django</span> 
-                        <span>Flask</span> 
-                        <span>Streamlit</span> 
+                        <span>.NET / ASP.NET MVC</span>
+                        <span>React.js</span>
+                        <span>Django</span>
+                        <span>Flask</span>
+                        <span>Streamlit</span>
                     </div>
                 </div>
 
+                <!-- Group 3: Cloud & Databases -->
                 <div class="skill-group reveal-node">
                     <div class="skill-group-head">
-                        <i class="fa fa-cloud skill-icon"></i>
+                        <div class="skill-icon-wrap">
+                            <i class="fa fa-cloud"></i>
+                        </div>
                         <h3>Cloud &amp; Databases</h3>
                     </div>
                     <div class="pill-cloud">
-                        <span>Google Cloud (GCP)</span> 
-                        <span>Vertex AI</span> 
-                        <span>BigQuery</span> 
-                        <span>AWS S3</span> 
-                        <span>PostgreSQL / MySQL</span> 
+                        <span>Google Cloud (GCP)</span>
+                        <span>Vertex AI</span>
+                        <span>BigQuery</span>
+                        <span>AWS S3</span>
+                        <span>PostgreSQL / MySQL</span>
                     </div>
                 </div>
 
+                <!-- Group 4: Tools & Methods -->
                 <div class="skill-group reveal-node">
                     <div class="skill-group-head">
-                        <i class="fa fa-screwdriver-wrench skill-icon"></i>
+                        <div class="skill-icon-wrap">
+                            <i class="fa fa-screwdriver-wrench"></i>
+                        </div>
                         <h3>Tools &amp; Methods</h3>
                     </div>
                     <div class="pill-cloud">
-                        <span>Git &amp; GitHub</span> 
+                        <span>Git &amp; GitHub</span>
                         <span>Docker</span>
-                        <span>VS Code</span> 
-                        <span>DbVisualizer</span> 
-                        <span>Agile (Scrum / Kanban)</span> 
+                        <span>VS Code</span>
+                        <span>DbVisualizer</span>
+                        <span>Agile (Scrum / Kanban)</span>
                     </div>
                 </div>
             </div>
@@ -1112,17 +1199,14 @@
         </div>
     </footer>
 
-    <!-- Lightweight Native Scroll-Reveal Script & Dynamic Year -->
+    <!-- Native Scroll-Reveal Script & Dynamic Year -->
     <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
         document.addEventListener("DOMContentLoaded", () => {
-            // Dynamic Copyright Year
             const yearEl = document.getElementById("current-year");
             if (yearEl) {
                 yearEl.textContent = new Date().getFullYear();
             }
 
-            // Scroll Reveal Observer
             const nodes = document.querySelectorAll(".reveal-node");
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -1135,7 +1219,6 @@
 
             nodes.forEach(node => observer.observe(node));
         });
-    </script>
     </script>
 </body>
 </html>
