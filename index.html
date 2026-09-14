@@ -532,7 +532,7 @@
             display: block;
         }
 
-        /* Special Open Source Icon Card Thumbnail */
+        /* Special Styled Icon Card Banner */
         .project-thumbnail.icon-banner {
             display: flex;
             align-items: center;
@@ -545,6 +545,15 @@
             font-size: 3.5rem;
             color: var(--primary);
             filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.4));
+        }
+
+        .project-thumbnail.icon-banner.green-theme {
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(15, 23, 42, 0.9) 70%);
+        }
+
+        .project-thumbnail.icon-banner.green-theme i {
+            color: var(--accent-green);
+            filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.4));
         }
 
         .project-card:hover .project-thumbnail img {
@@ -635,7 +644,6 @@
             box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.4);
         }
 
-        /* Flexbox container preventing text and icon collision */
         .skill-group-head {
             display: flex;
             align-items: center;
@@ -643,7 +651,6 @@
             margin-bottom: 1.25rem;
         }
 
-        /* Styled icon badge ensuring fixed dimensions */
         .skill-icon-wrap {
             display: inline-flex;
             align-items: center;
@@ -827,7 +834,7 @@
             transform: translateY(0);
         }
 
-        /* Comprehensive Responsive Rules */
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -967,8 +974,8 @@
                         <span class="role-tenure">Apr 2025 – Present</span>
                     </div>
                     <ul class="role-achievements">
-                        <li>Architected multimodal AI agents integrating Google Gemini and OpenAI to interpret databases and execute data workflows autonomously from user prompts.</li>
-                        <li>Built an AI agent pipeline to automatically upscale and enhance graphic quality for broadcast stories going On-AIR.</li>
+                        <li>Architected multimodal AI agents integrating Google Gemini and OpenAI to interpret databases and execute data workflows autonomously from user prompts[cite: 1].</li>
+                        <li>Built an AI agent pipeline to automatically upscale and enhance graphic quality for broadcast stories going On-AIR[cite: 1].</li>
                     </ul>
                 </div>
 
@@ -982,11 +989,11 @@
                         <span class="role-tenure">Jun 2022 – Mar 2025</span>
                     </div>
                     <ul class="role-achievements">
-                        <li>Engineered an AI-powered English-to-Hindi translation application, cutting manual workload and boosting publishing turnaround time.</li>
-                        <li>Designed dynamic web interfaces and data management workflows for live national election coverage.</li>
-                        <li>Automated token calculations, XML conversions, and audio transcriptions, lifting operational throughput by 20%.</li>
-                        <li>Designed and developed an internal task checklist web application with calendar visualization and task deadline notifications.</li>
-                        <li>Optimized enterprise asset data storage, cutting retrieval latency by 10% across developer workflows.</li>
+                        <li>Engineered an AI-powered English-to-Hindi translation application, cutting manual workload and boosting publishing turnaround time[cite: 1].</li>
+                        <li>Designed dynamic web interfaces and data management workflows for live national election coverage[cite: 1].</li>
+                        <li>Automated token calculations, XML conversions, and audio transcriptions, lifting operational throughput by 20%[cite: 1].</li>
+                        <li>Designed and developed an internal task checklist web application with calendar visualization and task deadline notifications[cite: 1].</li>
+                        <li>Optimized enterprise asset data storage, cutting retrieval latency by 10% across developer workflows[cite: 1].</li>
                     </ul>
                 </div>
 
@@ -1000,8 +1007,8 @@
                         <span class="role-tenure">Dec 2022 – Jun 2023</span>
                     </div>
                     <ul class="role-achievements">
-                        <li>Operated enterprise broadcast hardware, LiveU field transmitters, and digital video editing servers under strict live transmission constraints.</li>
-                        <li>Diagnosed and resolved critical technical faults under tight live news broadcast deadlines.</li>
+                        <li>Operated enterprise broadcast hardware, LiveU field transmitters, and digital video editing servers under strict live transmission constraints[cite: 1].</li>
+                        <li>Diagnosed and resolved critical technical faults under tight live news broadcast deadlines[cite: 1].</li>
                     </ul>
                 </div>
             </div>
@@ -1011,11 +1018,11 @@
         <section class="section-block" id="projects">
             <div class="section-title-wrap reveal-node">
                 <h2 class="section-title">Featured Projects</h2>
-                <p class="section-caption">Open-source contributions, distributed applications, and institutional systems</p>
+                <p class="section-caption">Open-source contributions, distributed web applications, and institutional systems</p>
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1: Open Source Contribution (Agno-AGI) -->
+                <!-- Project 1: Agno-AGI Open-Source -->
                 <div class="project-card reveal-node">
                     <div class="project-thumbnail icon-banner">
                         <i class="fab fa-github"></i>
@@ -1023,13 +1030,13 @@
                     <div class="project-content">
                         <h3 class="project-name">Agno-AGI Open-Source</h3>
                         <p class="project-description">
-                            Contributed to the Agno-AGI multi-modal agent framework by solving a video input bug, enabling local video streaming directly into GCP Vertex AI Gemini models.
+                            Contributed to the Agno-AGI framework by solving a critical bug, establishing a verified method for streaming local video inputs directly into GCP Vertex AI Gemini models[cite: 1].
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">Vertex AI</span>
                             <span class="tech-tag">Gemini API</span>
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Multi-Modal</span>
+                            <span class="tech-tag">Agents</span>
                         </div>
                         <div class="project-footer">
                             <a href="https://github.com/agno-agi/agno" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -1039,7 +1046,31 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Student DBMS -->
+                <!-- Project 2: Biotechnology Engineering Department -->
+                <div class="project-card reveal-node">
+                    <div class="project-thumbnail icon-banner green-theme">
+                        <i class="fa fa-dna"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-name">Biotechnology Portal</h3>
+                        <p class="project-description">
+                            Full-stack web application designed for the Biotech Engineering department, featuring AWS S3 bucket storage for media and static files with Heroku cloud hosting[cite: 1].
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">SQLite3</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://bietdbt.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Live Demo <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Student DBMS -->
                 <div class="project-card reveal-node">
                     <div class="project-thumbnail">
                         <img src="img/sdbms.jpg" alt="Student Database Management System" loading="lazy" width="360" height="180">
@@ -1062,7 +1093,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: MAESM -->
+                <!-- Project 4: MAESM-2021 -->
                 <div class="project-card reveal-node">
                     <div class="project-thumbnail">
                         <img src="img/MAESM.jpg" alt="MAESM-2021 Conference Portal" loading="lazy" width="360" height="180">
@@ -1070,7 +1101,7 @@
                     <div class="project-content">
                         <h3 class="project-name">MAESM Conference Portal</h3>
                         <p class="project-description">
-                            Institutional portal built for the International Conference on Modern Approaches in Engineering, Science, and Management, integrated directly with EasyChair for paper submissions.
+                            Institutional portal built for the International Conference on Modern Approaches in Engineering, Science, and Management, integrated directly with EasyChair for research submissions[cite: 1].
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">HTML5</span>
@@ -1080,29 +1111,6 @@
                         <div class="project-footer">
                             <a href="https://github.com/MAESM2021/maesm" target="_blank" rel="noopener noreferrer" class="project-link">
                                 Repository <i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Portfolio -->
-                <div class="project-card reveal-node">
-                    <div class="project-thumbnail">
-                        <img src="img/portfolio.jpg" alt="Personal Developer Portfolio" loading="lazy" width="360" height="180">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-name">Personal Portfolio</h3>
-                        <p class="project-description">
-                            Zero-dependency developer portfolio hosted on GitHub Pages, featuring defensive CSP headers, accessibility-tested components, and modern CSS layouts.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Pure CSS</span>
-                            <span class="tech-tag">Glassmorphism</span>
-                            <span class="tech-tag">Animations</span>
-                        </div>
-                        <div class="project-footer">
-                            <a href="https://vishalsahab.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                Live Deployment <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
